@@ -1,0 +1,19 @@
+{
+  "name": "@homestay/seed-data",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@homestay/shared": "1.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

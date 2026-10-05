@@ -1,0 +1,36 @@
+{
+  "name": "homestay-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SaaS-style Homestay Management System demo. React + Redux-Saga frontend, Express API on Vercel serverless functions, seeded in-memory storage.",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "data/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,magenta \"npm run dev -w @homestay/api\" \"npm run dev -w @homestay/web\"",
+    "dev:api": "npm run dev -w @homestay/api",
+    "dev:web": "npm run dev -w @homestay/web",
+    "build": "npm run build -w @homestay/web",
+    "preview": "npm run preview -w @homestay/web",
+    "start:api": "npm run start -w @homestay/api",
+    "test": "npm run test -w @homestay/shared && npm run test -w @homestay/seed-data && npm run test -w @homestay/api && npm run test -w @homestay/web",
+    "test:shared": "npm run test -w @homestay/shared",
+    "test:api": "npm run test -w @homestay/api",
+    "test:web": "npm run test -w @homestay/web"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
